@@ -1,0 +1,23 @@
+if [[ `whoami` == "root" ]]; then
+	PS1="# "
+else
+	PS1="$ "
+fi
+
+CDPATH=".:$HOME:$HOME/Projects:/Volumes"
+
+#
+# History
+#
+HISTFILE="$HOME/.history"
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILESIZE=10000
+HISTCONTROL="ignoreboth"
+
+#
+# rbenv
+#
+if command -v rbenv &>/dev/null; then
+	eval "$(rbenv init -)"
+fi

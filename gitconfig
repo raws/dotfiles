@@ -1,0 +1,33 @@
+[user]
+    name = Ross Paffett
+    email = ross@rosspaffett.com
+[github]
+    user = raws
+    token = 8ee567d08562e42c02b1fbd4d0599653
+[core]
+    editor = nano
+    excludesfile = /Users/ross/.gitignore
+[alias]
+    co = checkout
+    ct = checkout -t
+    ci = commit -v
+    ca = commit -av
+    st = status -sb
+    up = pull
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[apply]
+    whitespace = nowarn
+[branch]
+    autosetupmerge = true
+[push]
+    default = tracking
+[rerere]
+    enabled = 1
+[url "git@github.com:"]
+    pushInsteadOf = github:
+    pushInsteadOf = git://github.com/
+[url "git://github.com/"]
+    insteadOf = github:

@@ -1,0 +1,18 @@
+#
+# ls
+#
+alias ls="ls -Fh"
+alias la="ls -A"
+
+#
+# Git
+#
+alias g="git"
+alias gst="git status"
+alias gb="git branch"
+alias gba="git branch -a"
+
+#
+# Rails
+#
+alias rst="touch tmp/restart.txt"
