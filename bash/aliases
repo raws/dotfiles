@@ -16,3 +16,8 @@ alias gba="git branch -a"
 # Rails
 #
 alias rst="touch tmp/restart.txt"
+
+#
+# I make myself sick
+#
+alias hack="cat /dev/urandom | hexdump -C | grep '1f de'"
