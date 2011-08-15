@@ -3,7 +3,7 @@
     email = ross@rosspaffett.com
 [github]
     user = raws
-    token = 8ee567d08562e42c02b1fbd4d0599653
+    token = !security 2>&1 >/dev/null find-generic-password -gs \"GitHub API Token\" | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 [core]
     editor = nano
     excludesfile = /Users/ross/.gitignore
