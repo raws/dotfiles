@@ -1,9 +1,20 @@
+#
+# Prompt
+#
+function parse_git_branch {
+	ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+	echo "("${ref#refs/heads/}")"
+}
+
 if [[ `whoami` == "root" ]]; then
 	PS1="# "
 else
-	PS1="$ "
+	PS1="\[\e[38;5;240m\]\$(date +%H:%M) \W \$(parse_git_branch)\$\[\e[0m\] "
 fi
 
+#
+# cd
+#
 CDPATH=".:$HOME:$HOME/Projects:/Volumes"
 
 #
