@@ -19,4 +19,4 @@ Bash completion scripts must be user executable:
 
 ### Resources
 
-Many tricks and much inspiration come from [Josh Peek's dotfiles](https://github.com/josh/dotfiles) and [Ryan Bates' dotfiles](https://github.com/ryanb/dotfiles).
+Many tricks and much inspiration come from [Josh Peek](https://github.com/josh/dotfiles) and [Ryan Bates](https://github.com/ryanb/dotfiles).
