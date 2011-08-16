@@ -13,6 +13,11 @@ alias gb="git branch"
 alias gba="git branch -a"
 
 #
+# Projects
+#
+function p { cd ~/Projects/$1; }
+
+#
 # Rails
 #
 alias rst="touch tmp/restart.txt"
