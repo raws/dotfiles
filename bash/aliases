@@ -23,6 +23,7 @@ fi
 # Projects
 #
 function p { cd ~/Projects/$1; }
+function pm { cd ~/Projects/$1 && mate .; }
 
 #
 # Rails
