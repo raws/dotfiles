@@ -11,6 +11,12 @@ Before using Git with these dotfiles on an OS X machine, ensure an unlocked or o
     ln -fs $HOME/.dotfiles/bash_profile .bash_profile
     ...
 
+#### Bash Completion
+
+Bash completion scripts must be user executable:
+
+    chmod u+x ~/.bash/completion_scripts/project_completion
+
 ### Resources
 
 Many tricks and much inspiration come from [Josh Peek's dotfiles](https://github.com/josh/dotfiles) and [Ryan Bates' dotfiles](https://github.com/ryanb/dotfiles).
