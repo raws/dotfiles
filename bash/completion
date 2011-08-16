@@ -1,2 +1,3 @@
 complete -C ~/.bash/completion_scripts/capistrano_completion -o default cap
 complete -C ~/.bash/completion_scripts/project_completion -o default p
+complete -C ~/.bash/completion_scripts/rake_completion -o default rake
