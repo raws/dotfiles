@@ -13,6 +13,13 @@ alias gb="git branch"
 alias gba="git branch -a"
 
 #
+# hub (http://defunkt.io/hub/)
+#
+if command -v hub &>/dev/null; then
+	alias git="hub"
+fi
+
+#
 # Projects
 #
 function p { cd ~/Projects/$1; }
