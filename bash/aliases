@@ -31,6 +31,11 @@ function pm { cd ~/Projects/$1 && mate .; }
 alias rst="touch tmp/restart.txt"
 
 #
+# Color reference
+#
+function colors { for i in `seq 0 255`; do printf '\033[38;5;'"${i}m${i}\n"; done }
+
+#
 # I make myself sick
 #
 alias hack="cat /dev/urandom | hexdump -C | grep '1f de'"
