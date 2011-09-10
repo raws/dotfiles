@@ -1,33 +1,33 @@
 [user]
-    name = Ross Paffett
-    email = ross@rosspaffett.com
+	name = Ross Paffett
+	email = ross@rosspaffett.com
 [github]
-    user = raws
-    token = !security 2>&1 >/dev/null find-generic-password -gs \"GitHub API Token\" | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
+	user = raws
+	token = !security 2>&1 >/dev/null find-generic-password -gs \"GitHub API Token\" | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 [core]
-    editor = nano
-    excludesfile = /Users/ross/.gitignore
+	editor = nano
+	excludesfile = /Users/ross/.gitignore
 [alias]
-    co = checkout
-    ct = checkout -t
-    ci = commit -v
-    ca = commit -av
-    st = status -sb
-    up = pull
+	co = checkout
+	ct = checkout -t
+	ci = commit -v
+	ca = commit -av
+	st = status -sb
+	up = pull
 [color]
-    branch = auto
-    diff = auto
-    status = auto
+	branch = auto
+	diff = auto
+	status = auto
 [apply]
-    whitespace = nowarn
+	whitespace = nowarn
 [branch]
-    autosetupmerge = true
+	autosetupmerge = true
 [push]
-    default = tracking
+	default = tracking
 [rerere]
-    enabled = 1
+	enabled = 1
 [url "git@github.com:"]
-    pushInsteadOf = github:
-    pushInsteadOf = git://github.com/
+	pushInsteadOf = github:
+	pushInsteadOf = git://github.com/
 [url "git://github.com/"]
-    insteadOf = github:
+	insteadOf = github:
