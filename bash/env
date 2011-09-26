@@ -48,3 +48,10 @@ export CLICOLOR GREP_OPTIONS GREP_COLOR
 # Ruby
 #
 export RUBYLIB="lib:test:$RUBYLIB"
+
+#
+# Screen
+#
+export SCREENDIR="$HOME/.screen"
+mkdir -p $SCREENDIR
+chmod 0700 $SCREENDIR
