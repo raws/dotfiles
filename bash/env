@@ -58,15 +58,12 @@ export RUBYLIB="lib:test:$RUBYLIB"
 # Screen
 #
 
-if [ -z "$TMPDIR" ]; then
+if [ -n "$TMPDIR" ]; then
 	SCREENDIR="$TMPDIR/.screen"
 else
 	SCREENDIR="$HOME/.screen"
 fi
 
-if [ ! -d "$SCREENDIR" ]; then
-	mkdir -p $SCREENDIR
-	chmod 0700 $SCREENDIR
-fi
-
+mkdir -p $SCREENDIR
+chmod 0700 $SCREENDIR
 export SCREENDIR
