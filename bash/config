@@ -1,6 +1,7 @@
 #
 # Prompt
 #
+
 function parse_git_branch {
 	ref=$(git symbolic-ref HEAD 2> /dev/null) || return
 	echo "("${ref#refs/heads/}")"
@@ -15,11 +16,13 @@ fi
 #
 # cd
 #
+
 CDPATH=".:$HOME:$HOME/Projects:/Volumes"
 
 #
 # History
 #
+
 HISTFILE="$HOME/.history"
 HISTSIZE=10000
 SAVEHIST=10000
@@ -29,6 +32,7 @@ HISTCONTROL="ignoreboth"
 #
 # rbenv
 #
+
 if command -v rbenv &>/dev/null; then
 	eval "$(rbenv init -)"
 fi
