@@ -62,11 +62,11 @@ if [ -z "$TMPDIR" ]; then
 	SCREENDIR="$TMPDIR/.screen"
 else
 	SCREENDIR="$HOME/.screen"
-end
+fi
 
 if [ ! -d "$SCREENDIR" ]; then
 	mkdir -p $SCREENDIR
 	chmod 0700 $SCREENDIR
-end
+fi
 
 export SCREENDIR
