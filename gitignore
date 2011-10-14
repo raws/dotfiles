@@ -3,6 +3,7 @@
 .DS_Store
 ._*
 /.bundle
+.powenv
 .rbenv-version
 .sass-cache
 TAGS
