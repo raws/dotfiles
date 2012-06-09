@@ -31,3 +31,5 @@
 	pushInsteadOf = git://github.com/
 [url "git://github.com/"]
 	insteadOf = github:
+[credential]
+	helper = osxkeychain
