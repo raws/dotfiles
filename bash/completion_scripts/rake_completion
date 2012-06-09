@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 class RakeCompletion
   CACHE_FILE_NAME = ".rake_tasks~"
   
