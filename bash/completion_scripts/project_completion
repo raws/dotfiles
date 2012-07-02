@@ -16,7 +16,7 @@ class ProjectCompletion
   end
   
   def projects
-    `ls ~/Projects/`.split
+    Dir.entries(File.expand_path(ENV["PROJECTS_PATH"]))
   end
 end
 

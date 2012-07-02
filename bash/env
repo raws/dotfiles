@@ -28,7 +28,9 @@ if [ -d "/usr/local/Cellar/node" ]; then
 	NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 fi
 
-export PATH MANPATH NODE_PATH
+PROJECTS_PATH="$HOME/Projects"
+
+export PATH MANPATH NODE_PATH PROJECTS_PATH
 
 #
 # Editor and pager

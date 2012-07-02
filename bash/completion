@@ -1,4 +1,4 @@
 source ~/.bash/completion_scripts/git_completion
 complete -C ~/.bash/completion_scripts/capistrano_completion -o default cap
-complete -C ~/.bash/completion_scripts/project_completion -o default p pm
+complete -C ~/.bash/completion_scripts/project_completion -o default p pe pm pst
 complete -C ~/.bash/completion_scripts/rake_completion -o default rake

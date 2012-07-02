@@ -1,4 +1,10 @@
 #
+# Editor
+#
+
+alias e="$EDITOR"
+
+#
 # ls
 #
 
@@ -26,8 +32,10 @@ fi
 # Projects
 #
 
-function p { cd ~/Projects/$1; }
-function pm { cd ~/Projects/$1 && mate .; }
+function p { cd "$PROJECTS_PATH/$1"; }
+function pe { p $1 && e .; }
+function pm { p $1 && mate .; }
+function pst { p $1 && subl .; }
 
 #
 # Rails
