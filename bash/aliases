@@ -10,6 +10,7 @@ alias e="$EDITOR"
 
 alias ls="ls -Fh"
 alias la="ls -A"
+alias ll="ls -l"
 
 #
 # Git
