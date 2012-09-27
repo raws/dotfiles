@@ -30,6 +30,13 @@ if command -v hub &>/dev/null; then
 fi
 
 #
+# LevelUp
+#
+
+alias lsrc="heroku run --app levelup-staging rails c"
+alias lsdb="wget `heroku pgbackups:url --app levelup-staging`"
+
+#
 # Projects
 #
 
