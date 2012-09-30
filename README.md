@@ -2,9 +2,8 @@ This is my shell configuration.
 
 ### Setting Up
 
-Before using Git with these dotfiles on an OS X machine, ensure an unlocked or otherwise accessible keychain contains a "GitHub API Token" generic password. (See `github.token` in `gitconfig` for its usage.)
+To get set up, symlink the configuration files in this repository to their usual locations:
 
-    cd
     git clone git@github.com:raws/dotfiles.git .dotfiles
     ln -s $HOME/.dotfiles/bash .bash
     ln -fs $HOME/.dotfiles/bashrc .bashrc
