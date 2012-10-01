@@ -40,7 +40,7 @@ export PATH MANPATH NODE_PATH PROJECTS_PATH
 # Editor and pager
 #
 
-EDITOR="subl"
+EDITOR="subl -w"
 PAGER="less -R"
 LESSHISTFILE="-"
 export EDITOR PAGER LESSHISTFILE
