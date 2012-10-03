@@ -5,10 +5,13 @@ This is my shell configuration.
 To get set up, symlink the configuration files in this repository to their usual locations:
 
     git clone git@github.com:raws/dotfiles.git .dotfiles
-    ln -s $HOME/.dotfiles/bash .bash
-    ln -fs $HOME/.dotfiles/bashrc .bashrc
-    ln -fs $HOME/.dotfiles/bash_profile .bash_profile
-    ...
+    ln -s ~/.dotfiles/bash ~/.bash
+    ln -s ~/.dotfiles/bash_profile ~/.bash_profile
+    ln -s ~/.dotfiles/bashrc ~/.bashrc
+    ln -s ~/.dotfiles/bin ~/bin
+    ln -s ~/.dotfiles/gemrc ~/.gemrc
+    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+    ln -s ~/.dotfiles/gitignore ~/.gitignore
 
 #### Bash Completion
 
