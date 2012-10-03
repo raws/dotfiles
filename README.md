@@ -4,7 +4,6 @@ This is my shell configuration.
 
 To get set up, symlink the configuration files in this repository to their usual locations:
 
-    git clone git@github.com:raws/dotfiles.git .dotfiles
     ln -s ~/.dotfiles/bash ~/.bash
     ln -s ~/.dotfiles/bash_profile ~/.bash_profile
     ln -s ~/.dotfiles/bashrc ~/.bashrc
