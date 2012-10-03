@@ -32,9 +32,10 @@ if [ -d "/usr/local/Cellar/node" ]; then
 	NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 fi
 
+DROPBOX_PATH="$HOME/Dropbox"
 PROJECTS_PATH="$HOME/Projects"
 
-export PATH MANPATH NODE_PATH PROJECTS_PATH
+export PATH MANPATH NODE_PATH DROPBOX_PATH PROJECTS_PATH
 
 #
 # Editor and pager
