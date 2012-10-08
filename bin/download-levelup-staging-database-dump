@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Download the latest LevelUp staging server database dump.
+
+wget -O "/tmp/levelup-staging-$(date +%Y-%m-%d).dump" `heroku pgbackups:url --app levelup-staging`
