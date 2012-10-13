@@ -81,3 +81,4 @@ export SCREENDIR
 
 BLOLOL_GEMS_CREDENTIALS="$(keychain -s blolol-gems-production -u):$(keychain -s blolol-gems-production -p)"
 BLOLOL_GEMS_APP_URL="https://blolol-gems-production.herokuapp.com/"
+export BLOLOL_GEMS_CREDENTIALS BLOLOL_GEMS_APP_URL
