@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # Restore the latest LevelUp staging server database dump to the local development database.
 
-p levelup
-bundle exec rake db:drop db:create
-pg_restore --verbose --clean --no-acl --host localhost --no-owner -d levelup_development `ls -1 tmp/levelup-staging-* | tail -1`
+pg_restore --verbose --clean --no-acl --host localhost --no-owner -d levelup_staging `ls -1 tmp/levelup-staging-* | tail -1`
