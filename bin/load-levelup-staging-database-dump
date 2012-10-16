@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Restore the latest LevelUp staging server database dump to the local development database.
 
-pg_restore --verbose --clean --no-acl --host localhost --no-owner -d levelup_staging `ls -1 /tmp/levelup-staging-* | tail -1`
+pg_restore --verbose --clean --no-acl --host localhost --no-owner --jobs 8 -d levelup_staging `ls -1 /tmp/levelup-staging-* | tail -1`
