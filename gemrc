@@ -1,1 +1,10 @@
+---
+:backtrace: false
+:benchmark: false
+:bulk_threshold: 1000
+:sources:
+- http://rubygems.org/
+- https://s3.amazonaws.com/gems.blolol.com/908bd83da77f8592ff5f6c6b0b670aa166ac8c1375da018cd81467c6ebe82957/
+:update_sources: true
+:verbose: true
 gem: --no-ri --no-rdoc
