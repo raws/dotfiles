@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Create symlinks to Java binaries in /usr/local/bin. `java6` and `java` will point to Java 6, and
+# `java7` will point to Java 7.
+
+JAVA6_PATH="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin"
+JAVA7_PATH="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin"
+
+if [ -d "$JAVA6_PATH" ]; then
+	ln -fsv "${JAVA6_PATH}/java" "/usr/local/bin/java6"
+	ln -fsv "/usr/local/bin/java6" "/usr/local/bin/java"
+else
+	echo "Error: Java 6 is not installed at ${JAVA6_PATH}."
+fi
+
+if [ -d "$JAVA7_PATH" ]; then
+	ln -fsv "${JAVA7_PATH}/java" "/usr/local/bin/java7"
+else
+	echo "Error: Java 7 is not installed at ${JAVA7_PATH}."
+	exit 1
+fi
