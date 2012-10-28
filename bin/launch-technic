@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Start the Minecraft Technic Pack Launcher using Java 6
+# Usage: launch-technic
+
+TECHNIC_JAR="/Applications/Technic Launcher.app/Contents/Resources/launcher/technic-launcher-latest.jar"
+
+if [ -f "$TECHNIC_JAR" ]; then
+	/usr/local/bin/java6 -jar "$TECHNIC_JAR"
+else
+	echo "Error: Technic is not installed at ${TECHNIC_JAR}."
+	exit 1
+fi
