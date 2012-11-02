@@ -51,6 +51,13 @@ function pst { p $1 && subl .; }
 
 alias rst="touch tmp/restart.txt"
 
+function t {
+	local filename="$1"
+	shift
+	bundle exec rake db:test:prepare
+	bundle exec ruby -Itest "$filename" -n "/$@/"
+}
+
 #
 # SSH
 #
