@@ -49,6 +49,8 @@ function pst { p $1 && subl .; }
 # Rails
 #
 
+alias be="bundle exec"
+alias br="bundle exec rake"
 alias rst="touch tmp/restart.txt"
 
 function t {
