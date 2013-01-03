@@ -8,3 +8,4 @@
 .sass-cache
 TAGS
 tags
+tmux*.log
