@@ -5,7 +5,7 @@
 	user = raws
 [core]
 	editor = $EDITOR -w
-	excludesfile = /Users/ross/.gitignore
+	excludesfile = ~/.gitignore
 [alias]
 	co = checkout
 	ct = checkout -t
