@@ -6,5 +6,7 @@
 .powenv
 .rbenv-version
 .sass-cache
+custom_plan.rb
 TAGS
 tags
+zeus.json
