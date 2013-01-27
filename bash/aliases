@@ -5,6 +5,14 @@
 alias c="clear"
 
 #
+# Dates and times
+#
+
+alias dstamp='date +%Y%m%d'
+alias tstamp='date +%H%M%S'
+alias dtstamp='date +%Y%m%d%H%M%S'
+
+#
 # Editor
 #
 
