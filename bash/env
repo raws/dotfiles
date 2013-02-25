@@ -30,6 +30,12 @@ if [ -d "$HOME/.bin" ]; then
 	PATH="$HOME/.bin:$PATH"
 fi
 
+if [ -d "$HOME/.rbenv/shims" ]; then
+	PATH="$HOME/.rbenv/shims:$PATH"
+fi
+
+PATH="bin:$PATH"
+
 MANPATH="/usr/share/man:/usr/local/share/man"
 
 if [ -d "/usr/local/Cellar/node" ]; then
