@@ -23,6 +23,11 @@
 	autosetupmerge = true
 [push]
 	default = tracking
+[pretty]
+	# Use the "summary" format for LevelUp deploy notes:
+	# git log --pretty=summary production..staging
+	# 5bb8642 Ross Paffett [#6141] Add API v14 location show endpoint
+	summary = format:"%h %cn %s"
 [rerere]
 	enabled = 1
 [url "git@github.com:"]
