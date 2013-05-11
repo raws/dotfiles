@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Start the Minecraft Technic Pack Launcher using Java 6
+# Start the Minecraft Technic Launcher using Java 6
 # Usage: launch-technic
 
-TECHNIC_JAR="/Applications/Technic Launcher.app/Contents/Resources/launcher/technic-launcher-latest.jar"
+TECHNIC_JAR="/Applications/TechnicLauncher.jar"
 
 if [ -f "$TECHNIC_JAR" ]; then
 	/usr/local/bin/java6 -jar "$TECHNIC_JAR"
