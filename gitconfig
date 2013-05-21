@@ -22,7 +22,7 @@
 [branch]
 	autosetupmerge = true
 [push]
-	default = tracking
+	default = upstream
 [pretty]
 	# Use the "summary" format for LevelUp deploy notes:
 	# git log --pretty=summary production..staging
