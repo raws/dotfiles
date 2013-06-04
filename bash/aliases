@@ -66,19 +66,25 @@ function pst { p $1 && subl .; }
 alias be="bundle exec"
 alias br="bundle exec rake"
 alias bs="bundle exec rake spec"
-alias bsp="bundle exec rspec"
 alias rst="touch tmp/restart.txt"
 
 function prep-db {
 	if [[ -f config/database.yml ]]; then
-		bundle exec rake db:migrate && (bundle exec rake db:test:prepare ; bundle execrake parallel:prepare)
+		bundle exec rake db:migrate && (bundle exec rake db:test:prepare ; bundle exec rake parallel:prepare)
 	fi
+}
+
+function s {
+	local filename="$1"
+	shift
+	prep-db
+	bundle exec rspec "$filename"
 }
 
 function t {
 	local filename="$1"
 	shift
-	bundle exec rake db:test:prepare
+	prep-db
 	bundle exec ruby -Itest "$filename" -n "/$@/"
 }
 
