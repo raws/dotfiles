@@ -70,7 +70,7 @@ alias rst="touch tmp/restart.txt"
 
 function prep-db {
 	if [[ -f config/database.yml ]]; then
-		bundle exec rake db:migrate && (bundle exec rake db:test:prepare ; bundle exec rake parallel:prepare)
+		bundle exec rake db:migrate && bundle exec rake db:test:prepare
 	fi
 }
 
