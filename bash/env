@@ -18,7 +18,7 @@ if [ -d "/usr/local" ]; then
 	PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-if [ -d "$HOME/.rbenv/shims" ]; then
+if [ -d "$HOME/.rbenv" ]; then
 	PATH="$HOME/.rbenv/shims:$PATH"
 fi
 

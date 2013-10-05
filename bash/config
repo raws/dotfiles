@@ -33,6 +33,6 @@ HISTCONTROL="ignoreboth"
 # rbenv
 #
 
-if command -v rbenv &>/dev/null; then
-	eval "$(rbenv init -)"
+if [ -d "$HOME/.rbenv" ]; then
+	rbenv rehash
 fi
