@@ -18,6 +18,10 @@ if [ -d "/usr/local" ]; then
 	PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
+if [ -d "$HOME/.rbenv/shims" ]; then
+	PATH="$HOME/.rbenv/shims:$PATH"
+fi
+
 if [ -d "/usr/local/share/npm/bin" ]; then
 	PATH="/usr/local/share/npm/bin:$PATH"
 fi
