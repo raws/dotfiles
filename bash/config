@@ -10,7 +10,7 @@ function parse_git_branch {
 if [[ `whoami` == "root" ]]; then
 	PS1="# "
 else
-	PS1="\[\e[38;5;240m\]\$(date +%H:%M) \W \$(parse_git_branch)\$\[\e[0m\] "
+	PS1="\[\e[38;5;240m\]\W \$(parse_git_branch)\$\[\e[0m\] "
 fi
 
 #
