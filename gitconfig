@@ -11,8 +11,8 @@
 	ct = checkout -t
 	ci = commit -v
 	ca = commit -av
+	 g = grep -1n
 	st = status -sb
-	up = pull
 [color]
 	branch = auto
 	diff = auto
