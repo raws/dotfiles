@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+# Updates an ActiveRecord migration's timestamp to the current UTC date and time.
+# Usage: update-migration-timestamp <path to migration>
+
+set -e
+
+if [[ -z "$1" ]]; then
+  echo 'Usage: update-migration-timestamp <path to migration>' >&2
+  echo 'Example: update-migration-timestamp db/migrate/20140929183525_initialize.rb' >&2
+  exit 1
+fi
+
+if [[ ! -e "$1" ]]; then
+  echo "Error: $1 does not exist." >&2
+  exit 1
+fi
+
+migrated() {
+  local database="${DB:-levelup_development}"
+  local version="$1"
+  local result="$(psql -q -P format=unaligned -d $database -c "
+    SELECT COUNT(*)
+    FROM schema_migrations
+    WHERE version = '$version'
+    LIMIT 1;
+  ")"
+  echo "$result" | sed -n 2p
+}
+
+old_path="$1"
+old_version="$(basename "$old_path" | cut -d _ -f 1)"
+new_version=`date -u +%Y%m%d%H%M%S`
+new_path="$(echo "$old_path" | sed "s/$old_version/$new_version/")"
+
+if [[ "$(migrated $old_version)" == '1' ]]; then
+  echo "Error: $(basename "$old_path") is currently applied to your development database." >&2
+  echo "       Run \`rake db:migrate:down VERSION=$old_version\` before updating its timestamp." >&2
+  exit 1
+fi
+
+echo "Old: $old_path"
+echo "New: $new_path"
+read -p "Are you sure you want to update the migration? (yes/no) " response
+
+case "$response" in
+  yes )
+    ;;
+  * )
+    echo 'Migration timestamp update aborted.' >&2
+    exit 1
+    ;;
+esac
+
+mv -v "$old_path" "$new_path"
