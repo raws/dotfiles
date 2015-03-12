@@ -67,6 +67,7 @@ alias be="bundle exec"
 alias br="bundle exec rake"
 alias bs="bundle exec rspec"
 alias rst="touch tmp/restart.txt"
+alias skh="env SKIP_HOOKUP=1"
 
 function prep-db {
 	if [[ -f config/database.yml ]]; then
