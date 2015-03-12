@@ -65,7 +65,7 @@ function psb { p $1 && subl .; }
 
 alias be="bundle exec"
 alias br="bundle exec rake"
-alias bs="bundle exec rake spec"
+alias bs="bundle exec rspec"
 alias rst="touch tmp/restart.txt"
 
 function prep-db {
