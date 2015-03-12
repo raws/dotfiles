@@ -69,24 +69,16 @@ alias bs="bundle exec rspec"
 alias rst="touch tmp/restart.txt"
 alias skh="env SKIP_HOOKUP=1"
 
-function prep-db {
-	if [[ -f config/database.yml ]]; then
-		bundle exec rake db:migrate && bundle exec rake db:test:prepare
-	fi
-}
-
 function s {
 	local filename="$1"
 	shift
-	prep-db
-	bundle exec rspec "$filename"
+	bs "$filename"
 }
 
 function t {
 	local filename="$1"
 	shift
-	prep-db
-	bundle exec ruby -Itest "$filename" -n "/$@/"
+	env TEST="$filename" br test:units
 }
 
 #
