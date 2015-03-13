@@ -64,22 +64,11 @@ function psb { p $1 && subl .; }
 #
 
 alias be="bundle exec"
-alias br="bundle exec rake"
-alias bs="bundle exec rspec"
+alias r="bundle exec rake"
 alias rst="touch tmp/restart.txt"
-alias skh="env SKIP_HOOKUP=1"
-
-function s {
-	local filename="$1"
-	shift
-	bs "$filename"
-}
-
-function t {
-	local filename="$1"
-	shift
-	env TEST="$filename" br test:units
-}
+alias s="bundle exec rspec"
+alias skh="SKIP_HOOKUP=1"
+alias t="bundle exec ruby -Itest"
 
 #
 # SSH
