@@ -1,8 +1,0 @@
-source ~/.bash/completion_scripts/git_completion
-complete -C ~/.bash/completion_scripts/capistrano_completion -o default cap
-complete -C ~/.bash/completion_scripts/project_completion -o default p pe pm pst
-complete -C ~/.bash/completion_scripts/rake_completion -o default rake
-
-if [ -d "$HOME/.rbenv" ]; then
-	source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.bash
-fi
