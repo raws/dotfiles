@@ -1,89 +1,39 @@
-#
-# Set en_US locale with UTF-8 encodings
-#
-
+# Set locale and encoding
 LANG="en_US.UTF-8"
 LANGUAGE="en"
 LC_CTYPE="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
-#
 # Paths
-#
-
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 
 if [ -d "/usr/local" ]; then
-	PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-fi
-
-if [ -d "$HOME/.rbenv" ]; then
-	PATH="$HOME/.rbenv/shims:$PATH"
-fi
-
-if [ -d "/usr/local/share/npm/bin" ]; then
-	PATH="/usr/local/share/npm/bin:$PATH"
-fi
-
-if [ -d "/usr/local/heroku/bin" ]; then
-	PATH="/usr/local/heroku/bin:$PATH"
+  PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
 if [ -d "$HOME/.bin" ]; then
-	PATH="$HOME/.bin:$PATH"
+  PATH="$HOME/.bin:$PATH"
 fi
 
-MANPATH="/usr/share/man:/usr/local/share/man"
+export PATH
 
-if [ -d "/usr/local/Cellar/node" ]; then
-	NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
-fi
-
-DROPBOX_PATH="$HOME/Dropbox"
-PROJECTS_PATH="$HOME/Projects"
-
-export PATH MANPATH NODE_PATH DROPBOX_PATH PROJECTS_PATH
-
-#
 # Editor and pager
-#
-
-EDITOR="subl"
+EDITOR="vim"
 PAGER="less -R"
 LESSHISTFILE="-"
 export EDITOR PAGER LESSHISTFILE
 
-#
 # Colors
-#
-
 CLICOLOR=1
 GREP_OPTIONS="--color=auto"
 GREP_COLOR="1;32"
 export CLICOLOR GREP_OPTIONS GREP_COLOR
 
-#
 # Ruby
-#
-
 export RUBYLIB="lib:test:$RUBYLIB"
 export RUBY_GC_HEAP_INIT_SLOTS=600000
 export RUBY_GC_HEAP_FREE_SLOTS=600000
 export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
-
-#
-# Screen
-#
-
-if [ -n "$TMPDIR" ]; then
-	SCREENDIR="$TMPDIR/.screen"
-else
-	SCREENDIR="$HOME/.screen"
-fi
-
-mkdir -p $SCREENDIR
-chmod 0700 $SCREENDIR
-export SCREENDIR
 
