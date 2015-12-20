@@ -4,7 +4,6 @@
 [github]
 	user = raws
 [core]
-	editor = $EDITOR -w
 	excludesfile = ~/.gitignore
 [alias]
 	co = checkout
