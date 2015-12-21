@@ -11,14 +11,9 @@ To get set up, symlink the configuration files in this repository to their usual
     ln -s ~/.dotfiles/gemrc ~/.gemrc
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
     ln -s ~/.dotfiles/gitignore ~/.gitignore
-    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-
-#### Bash Completion
-
-Bash completion scripts must be user executable:
-
-    chmod u+x ~/.bash/completion_scripts/project_completion
+    ln -s ~/.dotfiles/vimrc ~/.vimrc
 
 ### Resources
 
 Many tricks and much inspiration come from [Josh Peek](https://github.com/josh/dotfiles) and [Ryan Bates](https://github.com/ryanb/dotfiles).
+
