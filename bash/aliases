@@ -1,89 +1,17 @@
-#
-# Clear
-#
-
-alias c="clear"
-
-#
-# Dates and times
-#
-
-alias dstamp='date +%Y%m%d'
-alias tstamp='date +%H%M%S'
-alias dtstamp='date +%Y%m%d%H%M%S'
-
-#
-# Editor
-#
-
-alias e="$EDITOR"
-
-#
-# ls
-#
-
-alias ls="ls -Fh"
-alias la="ls -A"
-alias ll="ls -l"
-
-#
-# Git
-#
-
-alias g="git"
-alias gst="git status"
-alias gb="git branch"
-alias gba="git branch -a"
-
-#
-# hub (http://defunkt.io/hub/)
-#
-
-if command -v hub &>/dev/null; then
-	alias git="hub"
-fi
-
-#
-# LevelUp
-#
-
-alias lsrc='heroku run --app levelup-staging rails c'
-alias lsdb='wget `heroku pgbackups:url --app levelup-staging`'
-
-#
-# Projects
-#
-
-function p { cd "$PROJECTS_PATH/$1"; }
-function pe { p $1 && e .; }
-function pm { p $1 && mate .; }
-function psb { p $1 && subl .; }
-
-#
-# Rails
-#
-
 alias be="bundle exec"
+alias c="clear"
+function colors { for i in `seq 0 255`; do printf '\033[38;5;'"${i}m${i}\n"; done }
+function copy-public-key { cat ~/.ssh/id_rsa.pub | ssh "$1" "mkdir -p ~/.ssh && cat - >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && chmod 700 ~/.ssh"; }
+alias dstamp='date +%Y%m%d'
+alias dtstamp='date +%Y%m%d%H%M%S'
+alias g="git"
+alias hack="cat /dev/urandom | hexdump -C | grep '1f de'"
+alias ll="ls -l"
+alias ls="ls -F"
+function p { cd "$PROJECTS_PATH/$1"; }
 alias r="bundle exec rake"
-alias rst="touch tmp/restart.txt"
 alias s="bundle exec rspec"
 alias skh="SKIP_HOOKUP=1"
 alias t="bundle exec ruby -Itest"
+alias tstamp='date +%H%M%S'
 
-#
-# SSH
-#
-
-function copy-public-key { cat ~/.ssh/id_rsa.pub | ssh "$1" "mkdir -p ~/.ssh && cat - >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && chmod 700 ~/.ssh"; }
-
-#
-# Color reference
-#
-
-function colors { for i in `seq 0 255`; do printf '\033[38;5;'"${i}m${i}\n"; done }
-
-#
-# I make myself sick
-#
-
-alias hack="cat /dev/urandom | hexdump -C | grep '1f de'"
