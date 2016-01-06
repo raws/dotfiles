@@ -16,6 +16,10 @@ if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
+if [ -d "/Applications/Sublime Text.app/Contents/SharedSupport/bin" ]; then
+  PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+fi
+
 export PATH
 
 # Editor and pager
@@ -36,4 +40,3 @@ export RUBY_GC_HEAP_INIT_SLOTS=600000
 export RUBY_GC_HEAP_FREE_SLOTS=600000
 export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
-
