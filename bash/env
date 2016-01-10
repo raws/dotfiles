@@ -16,6 +16,10 @@ if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
+if [ -d "/Applications/Postgres.app/Contents/Versions/9.4/bin" ]; then
+  PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+fi
+
 if [ -d "/Applications/Sublime Text.app/Contents/SharedSupport/bin" ]; then
   PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 fi
