@@ -27,7 +27,7 @@ fi
 export PATH
 
 # Editor and pager
-EDITOR="vim"
+EDITOR="subl -w"
 PAGER="less -R"
 LESSHISTFILE="-"
 export EDITOR PAGER LESSHISTFILE
