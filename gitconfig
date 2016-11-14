@@ -10,6 +10,7 @@
 	ct = checkout -t
 	ci = commit -v
 	ca = commit -av
+	fu = commit --fixup=HEAD
 	 g = grep -1n
 	st = status -sb
 [color]
