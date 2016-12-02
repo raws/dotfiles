@@ -8,7 +8,7 @@ export LANG LANGUAGE LC_CTYPE LC_ALL
 # Paths
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 
-if [ -d "/usr/local" ]; then
+if [ -d '/usr/local' ]; then
   PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
@@ -16,11 +16,11 @@ if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
-if [ -d "/Applications/Postgres.app/Contents/Versions/9.4/bin" ]; then
-  PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+if [ -d '/Applications/Postgres.app/Contents/Versions/9.6/bin' ]; then
+  PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
 fi
 
-if [ -d "/Applications/Sublime Text.app/Contents/SharedSupport/bin" ]; then
+if [ -d '/Applications/Sublime Text.app/Contents/SharedSupport/bin' ]; then
   PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 fi
 
