@@ -11,7 +11,13 @@ To get set up, symlink the configuration files in this repository to their usual
     ln -s ~/.dotfiles/gemrc ~/.gemrc
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
     ln -s ~/.dotfiles/gitignore ~/.gitignore
+    ln -s ~/.dotfiles/tmux ~/.tmux.conf
     ln -s ~/.dotfiles/vimrc ~/.vimrc
+
+Install [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) so that
+tmux is useful:
+
+	brew install reattach-to-user-namespace
 
 ### Resources
 
