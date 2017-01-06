@@ -16,8 +16,9 @@ if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
-if [ -d '/Applications/Postgres.app/Contents/Versions/9.6/bin' ]; then
-  PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
+if [ -d '/Applications/Postgres.app/Contents/Versions' ]; then
+  postgres_bin_dir="$(find /Applications/Postgres.app/Contents/Versions -type d -name bin | head)"
+  PATH="$PATH:$postgres_bin_dir"
 fi
 
 if [ -d '/Applications/Sublime Text.app/Contents/SharedSupport/bin' ]; then
