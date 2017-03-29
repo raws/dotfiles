@@ -37,3 +37,5 @@
 	insteadOf = github:
 [credential]
 	helper = osxkeychain
+[include]
+	path = ~/.gitconfig.overrides
