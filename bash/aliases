@@ -13,6 +13,6 @@ function p { cd "$PROJECTS_PATH/$1"; }
 alias r='bundle exec rake'
 alias s='bundle exec rspec'
 alias skh='SKIP_HOOKUP=1'
-alias t='bundle exec ruby -Itest'
+alias t='bundle exec rake test'
 alias tstamp='date +%H%M%S'
 
