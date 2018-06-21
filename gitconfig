@@ -11,7 +11,8 @@
 	ci = commit -v
 	ca = commit -av
 	fu = commit --fixup=HEAD
-	 g = grep -1n
+	fg = grep -F -1n
+	g = grep -1n
 	st = status -sb
 [color]
 	branch = auto
