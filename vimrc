@@ -48,3 +48,6 @@ augroup END
 " Remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Use fzf fuzzy file finder
+set rtp+=/usr/local/opt/fzf
+
