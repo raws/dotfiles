@@ -1,4 +1,9 @@
+# Ensure pbcopy and pbpaste work
+# https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 set-option -g default-command "reattach-to-user-namespace -l bash"
+
+# Declare correct terminal type
+set -g default-terminal "screen-256color"
 
 # tmux Plugin Manager
 set -g @plugin 'tmux-plugins/tpm' # https://github.com/tmux-plugins/tpm

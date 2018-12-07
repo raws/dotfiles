@@ -20,7 +20,6 @@ set textwidth=100
 " Line numbers
 set number
 set relativenumber
-highlight LineNr cterm=NONE ctermfg=DarkGrey ctermbg=NONE
 
 " Search
 set hlsearch
@@ -34,6 +33,9 @@ set ruler
 set showcmd
 
 " Syntax highlighting
+set termguicolors
+set background=dark
+colorscheme palenight
 syntax on
 
 " Highlight characters past 100 columns

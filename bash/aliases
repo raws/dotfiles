@@ -6,7 +6,7 @@ alias dstamp='date +%Y%m%d'
 alias dtstamp='date +%Y%m%d%H%M%S'
 alias g='git'
 alias hack="cat /dev/urandom | hexdump -C | grep '1f de'"
-alias hlogin='HEROKU_ORGANIZATION=thelevelup heroku login --sso'
+alias hlogin='HEROKU_ORGANIZATION=thelevelup heroku auth:login --sso'
 alias ll='ls -l'
 alias ls='ls -F'
 function p { cd "$PROJECTS_PATH/$1"; }
@@ -14,5 +14,6 @@ alias r='bundle exec rake'
 alias s='bundle exec rspec'
 alias skh='SKIP_HOOKUP=1'
 alias t='bundle exec rake test'
+alias tmux='tmux -2'
 alias tstamp='date +%H%M%S'
 
