@@ -51,3 +51,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Use fzf fuzzy file finder
 set rtp+=/usr/local/opt/fzf
 
+" Configure netrw
+let g:netrw_banner = 0 " Hide banner
+let g:netrw_liststyle = 3 " Tree view
+
