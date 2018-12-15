@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# List scripts in ~/.bin.
-
-ls -l ~/.bin/
