@@ -19,7 +19,13 @@ set textwidth=100
 
 " Line numbers
 set number
-set relativenumber
+
+" Highlight current line only in current window
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 " Search
 set hlsearch
