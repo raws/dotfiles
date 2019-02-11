@@ -1,3 +1,4 @@
 *.swp
 tmux/plugins/*
+tmux/resurrect/*
 vim/.netrwhist
