@@ -25,6 +25,14 @@ that tmux is useful:
 brew install reattach-to-user-namespace
 ```
 
+Before opening tmux for the first time, ensure [Tmux Plugin
+Manager](https://github.com/tmux-plugins/tpm) is available by initializing and updating the Git
+submodules in this repository:
+
+```sh
+git submodule update --init
+```
+
 After opening tmux for the first time, type `prefix` + <kbd>I</kbd> to
 [initialize Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 
