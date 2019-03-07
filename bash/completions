@@ -1,4 +1,12 @@
-if [ -e "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
-  source /usr/local/etc/bash_completion.d/git-completion.bash
+# Homebrew shell completion
+# https://docs.brew.sh/Shell-Completion
+if type brew 2&>/dev/null; then
+  for COMPLETION in $(brew --prefix)/etc/bash_completion.d/*; do
+    [[ -f $COMPLETION ]] && source "$COMPLETION"
+  done
+
+  if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]]; then
+    source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+  fi
 fi
 
