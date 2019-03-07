@@ -27,6 +27,9 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
+" Scroll buffer
+set scrolloff=3
+
 " Search
 set hlsearch
 set ignorecase
