@@ -1,6 +1,10 @@
 " Disable welcome screen
 set shortmess+=I
 
+" Load Pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
 " Input
 set backspace=indent,eol,start
 
