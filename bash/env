@@ -36,9 +36,15 @@ fi
 export PATH
 
 # Editor and pager
-EDITOR=vim
+if [ -d '/Applications/MacVim.app/Contents/bin' ]; then
+  EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+else
+  EDITOR=vim
+fi
+
 PAGER="less -R"
 LESSHISTFILE="-"
+
 export EDITOR PAGER LESSHISTFILE
 
 # Colors
