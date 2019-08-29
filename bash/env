@@ -16,8 +16,9 @@ if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
-if [ -d '/Applications/Postgres.app/Contents/Versions' ]; then
-  postgres_bin_dir="$(find /Applications/Postgres.app/Contents/Versions -type d -name bin | head)"
+if [[ -d '/Applications/Postgres.app/Contents/Versions' && -f "$HOME/.pg-version" ]]; then
+  postgres_version="$(cut -f 1 < ~/.pg-version)"
+  postgres_bin_dir="/Applications/Postgres.app/Contents/Versions/${postgres_version}/bin"
   PATH="$PATH:$postgres_bin_dir"
 fi
 

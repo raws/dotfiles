@@ -36,6 +36,20 @@ git submodule update --init
 After opening tmux for the first time, type `prefix` + <kbd>I</kbd> to
 [initialize Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 
+#### PostgreSQL
+
+If [Postgres.app](https://postgresapp.com) is installed, you may add one of its versions' binaries
+to `$PATH` by creating the file `~/.pg-version` with your desired version:
+
+```sh
+$ ls /Applications/Postgres.app/Contents/Versions/
+10/     11/     12/     latest@
+$ echo 10 > ~/.pg-version
+$ source ~/.bashrc
+$ which psql
+/Applications/Postgres.app/Contents/Versions/10/bin/psql
+```
+
 ### Resources
 
 Many tricks and much inspiration come from [Josh Peek](https://github.com/josh/dotfiles)
