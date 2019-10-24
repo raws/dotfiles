@@ -14,7 +14,7 @@ filetype indent on
 filetype plugin on
 autocmd FileType gitcommit set textwidth=70
 
-" Indentation
+" Default indentation
 set autoindent
 set expandtab
 set shiftwidth=2
@@ -63,6 +63,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Use fzf fuzzy file finder
 set rtp+=/usr/local/opt/fzf
+nnoremap <silent> <C-t> :FZF<CR>
 
 " Configure netrw
 let g:netrw_banner = 0 " Hide banner
