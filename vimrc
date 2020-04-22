@@ -9,6 +9,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dadbod'
