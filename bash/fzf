@@ -1,15 +1,18 @@
 if [[ -d /usr/local/opt/fzf ]]; then
   # Set up fzf
-  # ---------
   if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
     export PATH="$PATH:/usr/local/opt/fzf/bin"
   fi
 
   # Auto-completion
-  # ---------------
   [[ $- == *i* ]] && source /usr/local/opt/fzf/shell/completion.bash 2> /dev/null
 
   # Key bindings
-  # ------------
   source /usr/local/opt/fzf/shell/key-bindings.bash
+
+  # Use fd if available
+  if which -s fd; then
+    export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore --exclude .git --color always'
+    export FZF_DEFAULT_OPTS='--ansi'
+  fi
 fi
