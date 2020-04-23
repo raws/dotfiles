@@ -13,6 +13,7 @@ if [[ -d /usr/local/opt/fzf ]]; then
   # Use fd if available
   if which -s fd; then
     export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore --exclude .git --color always'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_OPTS='--ansi'
   fi
 fi
