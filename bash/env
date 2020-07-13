@@ -57,3 +57,6 @@ CLICOLOR=1
 GREP_OPTIONS="--color=auto"
 GREP_COLOR="1;32"
 export CLICOLOR GREP_OPTIONS GREP_COLOR
+
+# macOS Catalina Bash deprecation warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
