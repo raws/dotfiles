@@ -4,7 +4,7 @@ This is my shell configuration.
 
 To get set up, run `bin/install-dotfiles`. It's idempotent and won't clobber anything that already exists, so it's safe to run multiple times.
 
-```sh
+```
 $ bin/install-dotfiles
 
 ==> Installing dotfiles from /Users/ross/.dotfiles...
@@ -27,7 +27,13 @@ reattach-to-user-namespace is missing. Installing it using Homebrew...
 ==> Done!
 ```
 
+#### tmux
+
 After opening tmux for the first time, type `prefix` + <kbd>I</kbd> to [initialize Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
+
+#### Vim
+
+After opening Vim for the first time, run `:PlugInstall` to [initialize vim-plug](https://github.com/junegunn/vim-plug).
 
 #### PostgreSQL
 
