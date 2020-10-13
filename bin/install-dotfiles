@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# Installs my shell configuration. It's idempotent and won't clobber anything
+# that already exists, so it's safe to run multiple times.
+
+tty_escape() { printf "\033[%sm" "$1"; }
+tty_mkbold() { tty_escape "1;$1"; }
+tty_blue="$(tty_mkbold 34)"
+tty_bold="$(tty_mkbold 39)"
+tty_red="$(tty_mkbold 31)"
+tty_reset="$(tty_escape 0)"
+
+hey() { printf "${tty_blue}==>${tty_bold} %s${tty_reset}\n" "$1"; }
+warn() { printf "${tty_red}==>${tty_bold} %s${tty_reset}\n" "$1"; }
+
+abort() {
+  warn "$1"
+  exit 1
+}
+
+install_missing_homebrew_package() {
+  which "$1" || {
+    echo "$1 is missing. Installing it using Homebrew..."
+    brew install "$1"
+  }
+}
+
+link_dotfile() {
+  source_path="$dotfiles_root/$1"
+  target_path="$2"
+
+  if [[ ! -e "$target_path" ]]; then
+    ln -sv "$source_path" "$target_path"
+  else
+    echo "Skipping $target_path because it already exists"
+  fi
+}
+
+dotfiles_root="$HOME/.dotfiles"
+
+if [[ ! -d "$dotfiles_root" ]]; then
+  abort "Please ensure your dotfiles are accessible at $dotfiles_root"
+  exit 1
+else
+  hey "Installing dotfiles from ${dotfiles_root}..."
+fi
+
+hey 'Symlinking dotfiles...'
+link_dotfile bash ~/.bash
+link_dotfile bash_profile ~/.bash_profile
+link_dotfile bashrc ~/.bashrc
+link_dotfile bin ~/.bin
+link_dotfile gemrc ~/.gemrc
+link_dotfile gitconfig ~/.gitconfig
+link_dotfile gitignore ~/.gitignore
+link_dotfile gvimrc ~/.gvimrc
+link_dotfile tmux ~/.tmux
+link_dotfile tmux.conf ~/.tmux.conf
+link_dotfile vim ~/.vim
+link_dotfile vimrc ~/.vimrc
+
+hey 'Ensuring required packages are installed...'
+install_missing_homebrew_package reattach-to-user-namespace
+
+hey 'Preparing tmux and Vim plugins...'
+( cd "$dotfiles_root" && git submodule update --init )
+
+hey 'Done!'

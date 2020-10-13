@@ -2,44 +2,36 @@ This is my shell configuration.
 
 ### Setting Up
 
-To get set up, symlink the configuration files in this repository to their usual locations:
+To get set up, run `bin/install-dotfiles`. It's idempotent and won't clobber anything that already exists, so it's safe to run multiple times.
 
 ```sh
-ln -s ~/.dotfiles/bash ~/.bash
-ln -s ~/.dotfiles/bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/bashrc ~/.bashrc
-ln -s ~/.dotfiles/bin ~/.bin
-ln -s ~/.dotfiles/gemrc ~/.gemrc
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/gitignore ~/.gitignore
-ln -s ~/.dotfiles/gvimrc ~/.gvimrc
-ln -s ~/.dotfiles/tmux ~/.tmux
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/vim ~/.vim
-ln -s ~/.dotfiles/vimrc ~/.vimrc
+$ bin/install-dotfiles
+
+==> Installing dotfiles from /Users/ross/.dotfiles...
+==> Symlinking dotfiles...
+/Users/ross/.bash -> /Users/ross/.dotfiles/bash
+/Users/ross/.bash_profile -> /Users/ross/.dotfiles/bash_profile
+/Users/ross/.bashrc -> /Users/ross/.dotfiles/bashrc
+/Users/ross/.bin -> /Users/ross/.dotfiles/bin
+/Users/ross/.gemrc -> /Users/ross/.dotfiles/gemrc
+/Users/ross/.gitconfig -> /Users/ross/.dotfiles/gitconfig
+/Users/ross/.gitignore -> /Users/ross/.dotfiles/gitignore
+/Users/ross/.gvimrc -> /Users/ross/.dotfiles/gvimrc
+/Users/ross/.tmux -> /Users/ross/.dotfiles/tmux
+/Users/ross/.tmux.conf -> /Users/ross/.dotfiles/tmux.conf
+Skipping /Users/ross/.vim because it already exists
+/Users/ross/.vimrc -> /Users/ross/.dotfiles/vimrc
+==> Ensuring required packages are installed...
+reattach-to-user-namespace is missing. Installing it using Homebrew...
+==> Preparing tmux and Vim plugins...
+==> Done!
 ```
 
-Install [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) so
-that tmux is useful:
-
-```sh
-brew install reattach-to-user-namespace
-```
-
-Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) and Vim plugins by updating
-Git submodules:
-
-```sh
-git submodule update --init
-```
-
-After opening tmux for the first time, type `prefix` + <kbd>I</kbd> to
-[initialize Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
+After opening tmux for the first time, type `prefix` + <kbd>I</kbd> to [initialize Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 
 #### PostgreSQL
 
-If [Postgres.app](https://postgresapp.com) is installed, you may add one of its versions' binaries
-to `$PATH` by creating the file `~/.pg-version` with your desired version:
+If [Postgres.app](https://postgresapp.com) is installed, you may add one of its versions' binaries to `$PATH` by creating the file `~/.pg-version` with your desired version:
 
 ```sh
 $ ls /Applications/Postgres.app/Contents/Versions/
@@ -49,9 +41,3 @@ $ source ~/.bashrc
 $ which psql
 /Applications/Postgres.app/Contents/Versions/10/bin/psql
 ```
-
-### Resources
-
-Many tricks and much inspiration come from [Josh Peek](https://github.com/josh/dotfiles)
-and [Ryan Bates](https://github.com/ryanb/dotfiles).
-
