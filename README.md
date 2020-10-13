@@ -47,3 +47,7 @@ $ source ~/.bashrc
 $ which psql
 /Applications/Postgres.app/Contents/Versions/10/bin/psql
 ```
+
+#### Local Overrides
+
+Per-machine Bash configuration overrides can be placed in `~/.bashrc.local`.
