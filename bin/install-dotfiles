@@ -59,6 +59,7 @@ link_dotfile vim ~/.vim
 link_dotfile vimrc ~/.vimrc
 
 hey 'Ensuring required packages are installed...'
+install_missing_homebrew_package fzf
 install_missing_homebrew_package reattach-to-user-namespace
 
 hey 'Preparing tmux and Vim plugins...'
