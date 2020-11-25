@@ -31,16 +31,15 @@ autocmd User Rails map <buffer> <F5> :Rails<CR>
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set textwidth=100
 
 " Line numbers
 set number
 
 " Highlight current line only in current window
 augroup CursorLine
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
 augroup END
 
 " Scroll buffer
@@ -64,13 +63,6 @@ let g:lightline = {
 set termguicolors
 set background=dark
 colorscheme palenight
-
-" Highlight characters past 100 columns
-" http://blog.ezyang.com/2010/03/vim-textwidth/
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%100v.*/
-augroup END
 
 " Remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//e
