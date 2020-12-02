@@ -40,3 +40,5 @@
 	helper = osxkeychain
 [include]
 	path = ~/.gitconfig.overrides
+[pull]
+	ff = only
