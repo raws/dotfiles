@@ -73,3 +73,13 @@ nnoremap <silent> <C-t> :FZF<CR>
 " netrw
 let g:netrw_banner = 0 " Hide banner
 let g:netrw_liststyle = 3 " Tree view
+
+" Source only if file exists
+function! SourceIfExists(path)
+  if filereadable(expand(a:path))
+    exe 'source' a:path
+  endif
+endfunction
+
+" Allow for local overrides in ~/.vimrc.local
+call SourceIfExists('~/.vimrc.local')
