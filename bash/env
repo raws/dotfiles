@@ -63,3 +63,6 @@ export CLICOLOR GREP_OPTIONS GREP_COLOR
 
 # Silence macOS Bash deprecation warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# GPG
+export GPG_TTY=$(tty)

@@ -1,6 +1,7 @@
 [user]
 	name = Ross Paffett
 	email = ross@rosspaffett.com
+	signingkey = 1E0A2E61486BDB1F
 [github]
 	user = raws
 [core]
@@ -42,3 +43,5 @@
 	path = ~/.gitconfig.overrides
 [pull]
 	ff = only
+[commit]
+	gpgsign = true
