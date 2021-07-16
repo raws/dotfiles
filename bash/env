@@ -18,6 +18,10 @@ if [[ -d '/Applications/Postgres.app/Contents/Versions' && -f "$HOME/.pg-version
   PATH="$PATH:$postgres_bin_dir"
 fi
 
+if [ -d '/Applications/Keybase.app/Contents/SharedSupport/bin' ]; then
+  PATH="$PATH:/Applications/Keybase.app/Contents/SharedSupport/bin"
+fi
+
 if [ -d '/Applications/MacVim.app/Contents/bin' ]; then
   PATH="$PATH:/Applications/MacVim.app/Contents/bin"
 fi
