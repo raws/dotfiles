@@ -35,6 +35,11 @@ After opening tmux for the first time, type `prefix` + <kbd>I</kbd> to [initiali
 
 After opening Vim for the first time, run `:PlugInstall` to [initialize vim-plug](https://github.com/junegunn/vim-plug).
 
+If you wish to add local Vim config overrides, place them in these files:
+
+* `~/.vimrc.local` for global configuration
+* `~/.gvimrc.local` for MacVim configuration
+
 #### PostgreSQL
 
 If [Postgres.app](https://postgresapp.com) is installed, you may add one of its versions' binaries to `$PATH` by creating the file `~/.pg-version` with your desired version:
