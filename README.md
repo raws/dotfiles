@@ -2,7 +2,7 @@ This is my shell configuration.
 
 ### Setting Up
 
-To get set up, run `bin/install-dotfiles`. It's idempotent and won't clobber anything that already exists, so it's safe to run multiple times.
+To get set up, [install Homebrew](https://brew.sh) and then run `bin/install-dotfiles`. It's idempotent and won't clobber anything that already exists, so it's safe to run multiple times.
 
 ```
 $ bin/install-dotfiles
