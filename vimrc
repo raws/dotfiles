@@ -3,7 +3,13 @@ set shortmess+=I
 
 " Load vim-plug
 call plug#begin()
-Plug '/usr/local/opt/fzf'
+
+if isdirectory('/usr/local/opt/fzf')
+  Plug '/usr/local/opt/fzf'
+elseif isdirectory('/opt/homebrew/opt/fzf')
+  Plug '/opt/homebrew/opt/fzf'
+endif
+
 Plug 'chaoren/vim-wordmotion'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'itchyny/lightline.vim'
@@ -18,6 +24,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-sensible'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wellle/targets.vim'
+
 call plug#end()
 
 " File types
