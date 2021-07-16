@@ -6,11 +6,7 @@ LC_ALL="en_US.UTF-8"
 export LANG LANGUAGE LC_CTYPE LC_ALL
 
 # Paths
-PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-
-if [ -d '/usr/local' ]; then
-  PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-fi
+PATH='/usr/bin:/bin:/usr/sbin:/sbin'
 
 if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
@@ -40,6 +36,13 @@ fi
 
 export PATH
 
+# Homebrew
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+elif [ -x /usr/local/bin/brew ]; then
+  eval $(/usr/local/bin/brew shellenv)
+fi
+
 # Editor and pager
 if [ -d '/Applications/MacVim.app/Contents/bin' ]; then
   EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
@@ -58,5 +61,5 @@ GREP_OPTIONS="--color=auto"
 GREP_COLOR="1;32"
 export CLICOLOR GREP_OPTIONS GREP_COLOR
 
-# macOS Catalina Bash deprecation warning
+# Silence macOS Bash deprecation warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
