@@ -30,10 +30,6 @@ if [ -d '/Applications/Sublime Text.app/Contents/SharedSupport/bin' ]; then
   PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 fi
 
-if [ -d "$HOME/Library/Python/3.7/bin" ]; then
-  PATH="$HOME/Library/Python/3.7/bin:$PATH"
-fi
-
 if [ -d "$HOME/.cargo/bin" ]; then
   PATH="$HOME/.cargo/bin:$PATH"
 fi
