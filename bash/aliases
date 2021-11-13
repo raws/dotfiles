@@ -1,17 +1,21 @@
 alias be='bundle exec'
-alias c='clear'
 function colors { for i in `seq 0 255`; do printf '\033[38;5;'"${i}m${i}\n"; done }
 function copy-public-key { cat ~/.ssh/id_rsa.pub | ssh "$1" "mkdir -p ~/.ssh && cat - >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && chmod 700 ~/.ssh"; }
 alias dstamp='date +%Y%m%d'
 alias dtstamp='date +%Y%m%d%H%M%S'
 alias g='git'
 alias hack="cat /dev/urandom | hexdump -C | grep '1f de'"
-alias hlogin='HEROKU_ORGANIZATION=thelevelup heroku auth:login --sso'
 alias ll='ls -l'
 alias ls='ls -F'
 function p { cd "$PROJECTS_PATH/$1"; }
 alias r='bundle exec rake'
 alias s='bundle exec rspec'
+function secretshare {
+  local secret="$1"
+  local request_body="$(echo "$secret" | jq -Rc '{ password: { payload: ., expire_after_days: 5, expire_after_views: 10, deletable_by_viewer: true } }')"
+  local response_body="$(curl -sH 'Content-Type: application/json' -d "$request_body" https://secretshare.grubhub.com/p.json)"
+  echo "$response_body" | jq -r '"https://secretshare.grubhub.com/p/" + .url_token'
+}
 alias skh='SKIP_HOOKUP=1'
 alias t='bundle exec rake test'
 alias tmux='tmux -2'
