@@ -34,6 +34,10 @@ if [ -d "$HOME/.cargo/bin" ]; then
   PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+if [ -d "$HOME/.yarn/bin" ]; then
+  PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+fi
+
 export PATH
 
 # Homebrew
