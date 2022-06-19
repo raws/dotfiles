@@ -1,6 +1,8 @@
+# Ross's Dotfiles
+
 This is my shell configuration.
 
-### Setting Up
+## Usage
 
 To get set up, [install Homebrew](https://brew.sh) and then run `bin/install-dotfiles`. It's idempotent and won't clobber anything that already exists, so it's safe to run multiple times.
 
@@ -27,11 +29,15 @@ reattach-to-user-namespace is missing. Installing it using Homebrew...
 ==> Done!
 ```
 
-#### tmux
+### Git
+
+macOS comes with Git preinstalled, but it doesn't include Bash completions. You'll probably want to `brew install git` in order to get those (and to use a more up-to-date version of Git).
+
+### tmux
 
 After opening tmux for the first time, type `prefix` + <kbd>I</kbd> to [initialize Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 
-#### Vim
+### Vim
 
 After opening Vim for the first time, run `:PlugInstall` to [initialize vim-plug](https://github.com/junegunn/vim-plug).
 
@@ -40,7 +46,7 @@ If you wish to add local Vim config overrides, place them in these files:
 * `~/.vimrc.local` for global configuration
 * `~/.gvimrc.local` for MacVim configuration
 
-#### PostgreSQL
+### PostgreSQL
 
 If [Postgres.app](https://postgresapp.com) is installed, you may add one of its versions' binaries to `$PATH` by creating the file `~/.pg-version` with your desired version:
 
@@ -53,6 +59,6 @@ $ which psql
 /Applications/Postgres.app/Contents/Versions/10/bin/psql
 ```
 
-#### Local Overrides
+### Local Overrides
 
 Per-machine Bash configuration overrides can be placed in `~/.bashrc.local`.
