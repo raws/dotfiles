@@ -17,13 +17,6 @@ abort() {
   exit 1
 }
 
-install_missing_homebrew_package() {
-  which "$1" || {
-    echo "$1 is missing. Installing it using Homebrew..."
-    brew install "$1"
-  }
-}
-
 link_dotfile() {
   source_path="$dotfiles_root/$1"
   target_path="$2"
@@ -59,8 +52,7 @@ link_dotfile vim ~/.vim
 link_dotfile vimrc ~/.vimrc
 
 hey 'Ensuring required packages are installed...'
-install_missing_homebrew_package fzf
-install_missing_homebrew_package reattach-to-user-namespace
+brew bundle
 
 hey 'Preparing tmux and Vim plugins...'
 ( cd "$dotfiles_root" && git submodule update --init )

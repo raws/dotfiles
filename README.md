@@ -4,7 +4,7 @@ This is my shell configuration.
 
 ## Usage
 
-To get set up, [install Homebrew](https://brew.sh) and then run `bin/install-dotfiles`. It's idempotent and won't clobber anything that already exists, so it's safe to run multiple times.
+To get set up, [install Homebrew](https://brew.sh) and then run `bin/install-dotfiles`. It symlinks dotfiles into `$HOME`, and uses [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to install some common software, declared in `Brewfile`. It's idempotent and won't clobber anything that already exists, so it's safe to run multiple times.
 
 ```
 $ bin/install-dotfiles
@@ -24,14 +24,9 @@ $ bin/install-dotfiles
 Skipping /Users/ross/.vim because it already exists
 /Users/ross/.vimrc -> /Users/ross/.dotfiles/vimrc
 ==> Ensuring required packages are installed...
-reattach-to-user-namespace is missing. Installing it using Homebrew...
 ==> Preparing tmux and Vim plugins...
 ==> Done!
 ```
-
-### Git
-
-macOS comes with Git preinstalled, but it doesn't include Bash completions. You'll probably want to `brew install git` in order to get those (and to use a more up-to-date version of Git).
 
 ### tmux
 
@@ -44,7 +39,7 @@ After opening Vim for the first time, run `:PlugInstall` to [initialize vim-plug
 If you wish to add local Vim config overrides, place them in these files:
 
 * `~/.vimrc.local` for global configuration
-* `~/.gvimrc.local` for MacVim configuration
+* `~/.gvimrc.local` for [MacVim](https://macvim-dev.github.io/macvim/) configuration
 
 ### PostgreSQL
 
