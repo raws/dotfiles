@@ -1,7 +1,11 @@
 [user]
 	name = Ross Paffett
 	email = ross@rosspaffett.com
-	signingkey = 1E0A2E61486BDB1F
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPaLz8TyztVHhsINSGvcj8diGCbwVUbyteHBOEWvUdIW
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [github]
 	user = raws
 [core]
