@@ -10,14 +10,7 @@ alias ls='ls -F'
 function p { cd "$PROJECTS_PATH/$1"; }
 alias r='bundle exec rake'
 alias s='bundle exec rspec'
-function secretshare {
-  local secret="$1"
-  local request_body="$(echo "$secret" | jq -Rc '{ password: { payload: ., expire_after_days: 5, expire_after_views: 10, deletable_by_viewer: true } }')"
-  local response_body="$(curl -sH 'Content-Type: application/json' -d "$request_body" https://secretshare.grubhub.com/p.json)"
-  echo "$response_body" | jq -r '"https://secretshare.grubhub.com/p/" + .url_token'
-}
 alias skh='SKIP_HOOKUP=1'
 alias t='bundle exec rake test'
 alias tmux='tmux -2'
 alias tstamp='date +%H%M%S'
-
