@@ -7,4 +7,15 @@ function p { cd "$PROJECTS_PATH/$1"; }
 alias r='bundle exec rake'
 alias s='bundle exec rspec'
 alias t='bundle exec rake test'
+function secretshare {
+  if [ -z "$EMPLOYER" ]; then
+    echo "Warning: EMPLOYER is not set"
+  else
+    local secret="$1"
+    local service="https://secretshare.$EMPLOYER.com"
+    local request_body="$(echo "$secret" | jq -Rc '{ password: { payload: ., expire_after_days: 5, expire_after_views: 10, deletable_by_viewer: true } }')"
+    local response_body="$(curl -sH 'Content-Type: application/json' -d "$request_body" $service/p.json)"
+    echo "$response_body" | jq -r '"'${service}/p/'" + .url_token'
+  fi
+}
 alias tmux='tmux -2'
