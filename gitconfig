@@ -10,6 +10,7 @@
 	user = raws
 [core]
 	excludesfile = ~/.gitignore
+	editor = $EDITOR -w
 [alias]
 	co = checkout
 	ct = checkout -t

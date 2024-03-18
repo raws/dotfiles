@@ -43,3 +43,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # travis gem
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
+
+# OrbStack
+source ~/.orbstack/shell/init.bash 2>/dev/null || :

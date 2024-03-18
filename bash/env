@@ -53,8 +53,12 @@ elif [ -x /usr/local/bin/brew ]; then
 fi
 
 # Editor and pager
-if [ -d '/Applications/MacVim.app/Contents/bin' ]; then
-  EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+if [ -x /usr/local/bin/zed ]; then
+  EDITOR=/usr/local/bin/zed
+elif [ -x /usr/local/bin/code ]; then
+  EDITOR=/usr/local/bin/code
+elif [ -x /Applications/MacVim.app/Contents/bin/mvim ]; then
+  EDITOR='/Applications/MacVim.app/Contents/bin/mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 else
   EDITOR=vim
 fi
