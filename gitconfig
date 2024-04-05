@@ -16,6 +16,8 @@
 	ct = checkout -t
 	ci = commit -v
 	ca = commit -av
+	dft = difftool
+	dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
 	fu = commit --fixup=HEAD
 	fg = grep -F -1n
 	g = grep -1n
@@ -57,3 +59,12 @@
 	required = true
 [init]
 	defaultBranch = main
+[diff]
+    external = difft
+    tool = difftastic
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+    difftool = true
