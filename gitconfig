@@ -1,36 +1,36 @@
 [user]
-	name = Ross Paffett
-	email = ross@rosspaffett.com
+  name = Ross Paffett
+  email = ross@rosspaffett.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPaLz8TyztVHhsINSGvcj8diGCbwVUbyteHBOEWvUdIW
 [github]
-	user = raws
+  user = raws
 [credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
+  helper = /usr/local/share/gcm-core/git-credential-manager
 [commit]
-	gpgsign = true
+  gpgsign = true
 [gpg]
   format = ssh
 [core]
-	excludesfile = ~/.gitignore
-	editor = $EDITOR -w # Add `-w` to existing $EDITOR to wait until it's closed
+  excludesfile = ~/.gitignore
+  editor = $EDITOR -w # Add `-w` to existing $EDITOR to wait until it's closed
 [alias]
-	co = checkout
-	ci = commit -v
-	ca = commit -av
-	fg = grep -F -1n
-	g = grep -1n
-	st = status -sb
+  co = checkout
+  ci = commit -v
+  ca = commit -av
+  fg = grep -F -1n
+  g = grep -1n
+  st = status -sb
 [branch]
-	# Automatically track the originating branch when creating a new branch using `git checkout -b`
-	autosetupmerge = true
+  # Automatically track the originating branch when creating a new branch using `git checkout -b`
+  autosetupmerge = true
 [rerere]
-	# Automatically reapply previously resolved merge conflicts
-	enabled = 1
+  # Automatically reapply previously resolved merge conflicts
+  enabled = 1
 [pull]
-	# Don't automatically create a merge commit when a fast-forward merge isn't possible on `git pull`
-	ff = only
+  # Don't automatically create a merge commit when a fast-forward merge isn't possible on `git pull`
+  ff = only
 [init]
-	# The default is still "master" as of Git 2.46 in August 2024
-	defaultBranch = main
+  # The default is still "master" as of Git 2.46 in August 2024
+  defaultBranch = main
 [include]
-	path = ~/.gitconfig.overrides
+  path = ~/.gitconfig.overrides
