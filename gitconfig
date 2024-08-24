@@ -2,69 +2,35 @@
 	name = Ross Paffett
 	email = ross@rosspaffett.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPaLz8TyztVHhsINSGvcj8diGCbwVUbyteHBOEWvUdIW
-[gpg]
-  format = ssh
-[gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [github]
 	user = raws
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[commit]
+	gpgsign = true
+[gpg]
+  format = ssh
 [core]
 	excludesfile = ~/.gitignore
-	editor = $EDITOR -w
+	editor = $EDITOR -w # Add `-w` to existing $EDITOR to wait until it's closed
 [alias]
 	co = checkout
-	ct = checkout -t
 	ci = commit -v
 	ca = commit -av
-	dft = difftool
-	dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
-	fu = commit --fixup=HEAD
 	fg = grep -F -1n
 	g = grep -1n
 	st = status -sb
-[color]
-	branch = auto
-	diff = auto
-	status = auto
-[apply]
-	whitespace = nowarn
 [branch]
+	# Automatically track the originating branch when creating a new branch using `git checkout -b`
 	autosetupmerge = true
-[push]
-	default = upstream
-[pretty]
-	# Use the "summary" format for LevelUp deploy notes:
-	# git log --pretty=summary production..staging
-	# 5bb8642 Ross Paffett [#6141] Add API v14 location show endpoint
-	summary = format:"%h %cn %s"
 [rerere]
+	# Automatically reapply previously resolved merge conflicts
 	enabled = 1
-[url "git@github.com:"]
-	pushInsteadOf = github:
-	pushInsteadOf = git://github.com/
-[url "git://github.com/"]
-	insteadOf = github:
-[credential]
-	helper = osxkeychain
+[pull]
+	# Don't automatically create a merge commit when a fast-forward merge isn't possible on `git pull`
+	ff = only
+[init]
+	# The default is still "master" as of Git 2.46 in August 2024
+	defaultBranch = main
 [include]
 	path = ~/.gitconfig.overrides
-[pull]
-	ff = only
-[commit]
-	gpgsign = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[init]
-	defaultBranch = main
-[diff]
-    external = difft
-    tool = difftastic
-[difftool]
-    prompt = false
-[difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
-[pager]
-    difftool = true
