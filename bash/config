@@ -20,6 +20,11 @@ SAVEHIST=10000
 HISTFILESIZE=10000
 HISTCONTROL="ignoreboth"
 
+# asdf
+if [ -f "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh" ]; then
+  source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
+fi
+
 # rbenv
 if [ -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
