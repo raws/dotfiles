@@ -33,4 +33,4 @@
   # The default is still "master" as of Git 2.46 in August 2024
   defaultBranch = main
 [include]
-  path = ~/.gitconfig.overrides
+  path = ~/.gitconfig.local
