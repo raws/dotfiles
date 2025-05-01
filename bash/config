@@ -26,7 +26,7 @@ if [ -f "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh" ]; then
 fi
 
 # rbenv
-if [ -d "$HOME/.rbenv" ]; then
+if [ command -v rbenv >/dev/null 2>&1 && -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
 fi
 
