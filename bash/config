@@ -21,13 +21,8 @@ HISTFILESIZE=10000
 HISTCONTROL="ignoreboth"
 
 # asdf
-<<<<<<< HEAD
-if [ -f "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh" ]; then
-  source "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
-=======
 if [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
   source "$(brew --prefix asdf)/libexec/asdf.sh"
->>>>>>> 2844a3d (Support asdf version manager)
 fi
 
 # rbenv
