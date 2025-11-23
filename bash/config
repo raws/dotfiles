@@ -26,13 +26,13 @@ if [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
 fi
 
 # rbenv
-if [ command -v rbenv >/dev/null 2>&1 && -d "$HOME/.rbenv" ]; then
+if command -v rbenv >/dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
 # ruby-build
-if command -v brew >/dev/null 2>&1; then
-  # Use Homebrew's up-to-date OpenSSL when building Ruby
+if command -v ruby-build >/dev/null 2>&1; then
+  # Use Homebrew's OpenSSL when building Ruby
   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 fi
 
