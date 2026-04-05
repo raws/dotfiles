@@ -20,6 +20,11 @@ SAVEHIST=10000
 HISTFILESIZE=10000
 HISTCONTROL="ignoreboth"
 
+# mise
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate bash)"
+fi
+
 # asdf
 if [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
   source "$(brew --prefix asdf)/libexec/asdf.sh"
