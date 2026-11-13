@@ -14,7 +14,9 @@
   gpgsign = true
 [core]
   excludesfile = ~/.gitignore
-  editor = $EDITOR -w # Add `-w` to existing $EDITOR to wait until it's closed
+  # Open in an existing window and wait until the file is closed, using the
+  # right flags for $EDITOR (MacVim's $EDITOR already includes `-f`)
+  editor = "f() { case \"$EDITOR\" in */code) flags='-r -w' ;; */zed) flags='-e -w' ;; *) flags= ;; esac; eval \"$EDITOR $flags \\\"\\$@\\\"\"; }; f"
 [alias]
   co = checkout
   ci = commit -v
