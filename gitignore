@@ -4,6 +4,7 @@
 .DS_Store
 ._*
 /.bundle
+**/.claude/settings.local.json
 .powenv
 .rbenv-version
 .sass-cache
