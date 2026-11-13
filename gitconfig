@@ -10,6 +10,8 @@
   format = ssh
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  # Lets `git log --show-signature` and `%G?` verify SSH-signed commits
+  allowedSignersFile = ~/.dotfiles/git_allowed_signers
 [commit]
   gpgsign = true
 [core]
